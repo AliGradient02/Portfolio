@@ -1,0 +1,345 @@
+/*font*/
+.overlay {
+    font-family: "Arial", sans-serif; /* Change this to your desired font */
+    font-size: 20px; /* Adjust size */
+    font-weight: bold; /* Make it bold if needed */
+    color: white; /* Ensure it stands out */
+    text-transform: note; /* Optional: makes text uppercase */
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+
+
+.overlay {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+
+body {
+    background-color: black !important;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.list {
+    background-color: black; /* Ensures the background stays black */
+}
+
+.list {
+    columns: 6; /* Keep your 6-column layout */
+    column-gap: 0; /* Ensures no gaps between columns */
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    display: block; /* Ensure full width */
+    break-inside: avoid; /* Prevent breaking inside columns */
+    margin-bottom: 0; /* Remove any extra spacing */
+}
+
+.list img {
+    width: 100%;
+    display: block;
+    margin-bottom: 0; /* Removes default image spacing */
+}
+
+.overlay {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 300; 
+    /* 300 → Light
+    400 → Regular
+    500 → Medium
+    600 → Semi-Bold
+    700 → Boldd */
+    text-transform: none; /* Removes uppercase */
+}
+
+
+/* Hover effect */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.78);
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.25s ease-in-out;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.image-container:hover .overlay {
+    opacity: 1;
+}
+.list {
+    column-count: 6; /* Default: 6 columns on large screens */
+    column-gap: 0;
+}
+
+@media (max-width: 1200px) {
+    .list {
+        column-count: 4; /* 4 columns on medium screens */
+    }
+}
+
+@media (max-width: 900px) {
+    .list {
+        column-count: 3; /* 3 columns on tablets */
+    }
+}
+
+@media (max-width: 600px) {
+    .list {
+        column-count: 2; /* 2 columns on smaller screens */
+    }
+}
+
+@media (max-width: 400px) {
+    .list {
+        column-count: 1; /* 1 column on mobile */
+    }
+}
+/* Text Hover */
+
+.image-container a {
+    position: relative;
+    display: block; /* Ensures the link is fully clickable */
+}
+
+.image-container a img {
+    display: block;
+    width: 100%;
+}
+
+.overlay {
+    pointer-events: none; /* Allows clicks to pass through */
+}
+
+/* NavBar */
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5px;
+    background-color: black; /* Keep the navbar black like the rest of the site */
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures navbar stays above content */
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.name {
+    font-weight: bold;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.center-section {
+    display: flex;
+    gap: 20px;
+}
+
+.right-section {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: gray;
+    font-size: 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+
+/* Navbar Styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 50px;
+    background-color: black;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Left Section (Profile Name) */
+.left-section {
+    display: flex;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+/* Font size for the name in the navbar */
+.name {
+    font-weight: bold;
+    color: white;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 16px; /* Change the font size for the name */
+}
+
+/* Center Section (Nav Links) */
+.center-section, .right-section {
+    display: flex;
+    gap: 20px;
+}
+
+/* Font size for navbar links */
+.nav-link {
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    font-size: 20px; /* Change this to control navbar link size */
+    font-family: 'Space Grotesk', sans-serif;
+    transition: color 0.12s ease;
+}
+
+/* Hover effect */
+.nav-link:hover {
+    color: rgb(118, 118, 118);
+}
+.right-section .nav-link i {
+    font-size: 18px; /* Adjust icon size */
+    color: gray;
+    transition: color 0.3s ease;
+}
+
+.right-section .nav-link i:hover {
+    color: white;
+}
+
+
+
+/* About */
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: #f9f9f9;
+    color: #9e9e9e;
+  }
+  
+  .credits {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  .credits-columns {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px; /* Adds spacing between columns */
+  }
+  
+  .column {
+    flex: 1;
+    min-width: 200px;
+  }
+  
+  .column h3 {
+    color: #888888;
+    font-weight: normal;
+    margin-bottom: 5px;
+  }
+  
+  .column p {
+    margin: 0 0 15px;
+    line-height: 1.5;
+  }
+  
+  /* Responsive Design for tablets and smaller screens */
+  @media (max-width: 768px) {
+    .credits-columns {
+      flex-direction: column;
+    }
+  
+    .column {
+      margin-bottom: 20px;
+    }
+  }
+  
+  /* Adjust font sizes for very small devices */
+  @media (max-width: 480px) {
+    body {
+      padding: 20px;
+    }
+  
+    h1 {
+      font-size: 1.5rem;
+    }
+  
+    .column h3 {
+      font-size: 1rem;
+    }
+  
+    .column p {
+      font-size: 0.9rem;
+    }
+  }
+
+  /*About Text*/
+  .credits-section {
+    padding: 4rem 50px;
+    background-color: #f8f8f800;
+  }
+  
+  .credits-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .credits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .credits-column h3 {
+    font-size: 1.2rem;
+    color: #ededed;
+    margin-bottom: 0.5rem;
+  }
+  
+  .credits-column p {
+    font-size: 1rem;
+    margin: 0.2rem 0;
+  }
+  
+  /* image */
+
+  
