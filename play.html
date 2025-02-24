@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - AliGradient</title>
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        @font-face {
+          font-family: 'Space Grotesk';
+          font-style: normal;
+          font-weight: 400;
+          font-display: swap;
+          src: url('https://fonts.gstatic.com/s/spacegrotesk/v7/V8mCoQfNMn5j-7dL1Kz2r_DUoe0.woff2') format('woff2');
+        }
+        body {
+          font-family: 'Space Grotesk', sans-serif;
+        }
+      </style>
+      <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+      
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="left-section">
+            <img src="favicon.png" alt="Profile Picture" class="profile-pic">
+            <span class="name">AliGradient</span>
+        </div>
+        <div class="center-section">
+            <a href="index.html" class="nav-link">Work</a>
+            <a href="play.html" class="nav-link">Play</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="https://www.linkedin.com/in/aligradient/" class="nav-link" target="_blank">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="mailto:studiodesignyt@gmail.com" class="nav-link">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a href="https://www.behance.net/aligradient" class="nav-link" target="_blank">
+                <i class="fa-brands fa-behance"></i>
+            </a>
+        </div>
+    </nav>
+
+<!-- Main Container -->
+<section class="gallery">
+    <div class="list">
+        <div class="image-container">
+            <img src="https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/6345da209399957.67aaffb7ee112.png" alt="TwitchCon">
+            <div class="overlay">Urban Motion: The Spirit of Street Fashion</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://cdn.myportfolio.com/45a38c4e-1072-489a-b76c-5fcfb47b6100/e4828ae8-0079-4833-b3c9-7c7fff19d7ac_rw_1920.jpg?h=fb946a3d693cc7de794db41c5df9d92c" alt="Nike Ad">
+            <div class="overlay">Nike Ad</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://images.squarespace-cdn.com/content/v1/5ba8e1de65019fce416839c8/1718864470081-BUMFVDH4W6T64HEL2LTW/AMBIT_1x1.gif?format=1000w" alt="Modern Bankside">
+            <div class="overlay">Modern Bankside</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://cdn.dribbble.com/userupload/15819348/file/original-b4561b31cbc6e24c5dbf46b8bd54ce26.png?resize=1600x1200&vertical=center" alt="Ambit">
+            <div class="overlay">Ambit</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://images.squarespace-cdn.com/content/v1/5ba8e1de65019fce416839c8/1660127372672-4R57OVVC7RIDJD8YLJZ6/header.gif?format=1000w" alt="Ambit">
+            <div class="overlay">Ambit</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://cdn.dribbble.com/userupload/15819348/file/original-b4561b31cbc6e24c5dbf46b8bd54ce26.png?resize=1600x1200&vertical=center" alt="Ambit">
+            <div class="overlay">Ambit</div>
+        </div>
+
+        <div class="image-container">
+            <img src="https://cdn.dribbble.com/userupload/15819348/file/original-b4561b31cbc6e24c5dbf46b8bd54ce26.png?resize=1600x1200&vertical=center" alt="Ambit">
+            <div class="overlay">Ambit</div>
+        </div>
+    </div>
+</section>    
+    
+    
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const images = document.querySelectorAll(".image-container img");
+    let currentIndex = 0;
+    let overlay, img, nextBtn, prevBtn, closeBtn;
+
+    images.forEach((image, index) => {
+        image.addEventListener("click", function () {
+            currentIndex = index;
+
+            // Freeze scrolling
+            document.body.style.overflow = "hidden";
+
+            // Create overlay
+            overlay = document.createElement("div");
+            overlay.classList.add("fullscreen-overlay");
+
+            // Create full-screen image
+            img = document.createElement("img");
+            img.src = this.getAttribute("data-fullsize"); // Load full-size image
+            img.classList.add("fullscreen-img");
+
+            // Create navigation buttons
+            prevBtn = document.createElement("button");
+            prevBtn.innerHTML = "&#10094;"; // Left arrow
+            prevBtn.classList.add("prev");
+
+            nextBtn = document.createElement("button");
+            nextBtn.innerHTML = "&#10095;"; // Right arrow
+            nextBtn.classList.add("next");
+
+            // Create close button
+            closeBtn = document.createElement("button");
+            closeBtn.innerHTML = "&times;"; // Close icon
+            closeBtn.classList.add("close-btn");
+
+            // Append elements
+            overlay.appendChild(img);
+            overlay.appendChild(prevBtn);
+            overlay.appendChild(nextBtn);
+            overlay.appendChild(closeBtn);
+            document.body.appendChild(overlay);
+
+            // Event listeners for navigation
+            prevBtn.addEventListener("click", function (event) {
+                event.stopPropagation();
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                img.src = images[currentIndex].getAttribute("data-fullsize");
+            });
+
+            nextBtn.addEventListener("click", function (event) {
+                event.stopPropagation();
+                currentIndex = (currentIndex + 1) % images.length;
+                img.src = images[currentIndex].getAttribute("data-fullsize");
+            });
+
+            // Close overlay
+            closeBtn.addEventListener("click", function (event) {
+                event.stopPropagation();
+                document.body.removeChild(overlay);
+                document.body.style.overflow = ""; // Restore scrolling
+            });
+
+            overlay.addEventListener("click", function () {
+                document.body.removeChild(overlay);
+                document.body.style.overflow = ""; // Restore scrolling
+            });
+        });
+    });
+});
+document.querySelectorAll('.image-container img').forEach(img => {
+    img.setAttribute('data-fullsize', img.src);
+});
+
+
+
+        </script>
+        
+</body>
+</html>
