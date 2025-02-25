@@ -125,77 +125,35 @@ body {
 
 /* NavBar */
 
-/* Navbar Styling */
-.navbar {
+/* Centers the navbar within 1450px */
+.navbar-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5px;
-    background-color: black; /* Keep the navbar black like the rest of the site */
-    position: sticky;
-    top: 0;
-    z-index: 1000; /* Ensures navbar stays above content */
-}
-
-.left-section {
-    display: flex;
-    align-items: center;
-}
-
-.profile-pic {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.name {
-    font-weight: bold;
-    color: white;
-    font-family: 'Space Grotesk', sans-serif;
-}
-
-.center-section {
-    display: flex;
-    gap: 20px;
-}
-
-.right-section {
-    display: flex;
-    gap: 15px;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: gray;
-    font-size: 14px;
-    font-family: 'Space Grotesk', sans-serif;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: white;
-}
-
-
-/* Navbar Styling */
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 35px 50px;
+    justify-content: center; /* Center the navbar */
+    width: 100%;
     background-color: black;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
-/* Left Section (Profile Name) */
+/* Ensures navbar stays within max 1450px width */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1450px; /* Limit width */
+    padding: 35px 50px;
+    background-color: black;
+}
+
+/* Left Section */
 .left-section {
     display: flex;
     align-items: center;
 }
 
+/* Profile Pic */
 .profile-pic {
     width: 30px;
     height: 30px;
@@ -203,28 +161,32 @@ body {
     margin-right: 10px;
 }
 
-/* Font size for the name in the navbar */
+/* Name Styling */
 .name {
     font-weight: bold;
     color: white;
     font-family: 'Space Grotesk', sans-serif;
-    font-size: 16px; /* Change the font size for the name */
 }
 
-/* Center Section (Nav Links) */
-.center-section, .right-section {
+/* Center Section */
+.center-section {
     display: flex;
     gap: 20px;
 }
 
-/* Font size for navbar links */
+/* Navbar Links */
 .nav-link {
     text-decoration: none;
     color: rgb(255, 255, 255);
-    font-size: 20px; /* Change this to control navbar link size */
+    font-size: 20px;
     font-family: 'Space Grotesk', sans-serif;
     transition: color 0.12s ease;
 }
+
+.nav-link:hover {
+    color: gray;
+}
+
 
 /* Hover effect */
 .nav-link:hover {
